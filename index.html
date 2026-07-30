@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Pictures — Studio de Photographie &amp; Production Audiovisuelle | Ouagadougou</title>
+<meta name="description" content="Royal Pictures — Studio de photographie et production audiovisuelle à Ouagadougou, Burkina Faso. Mariages, clips vidéo, publicité, portraits institutionnels et captation d'événements.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%230b0b0a%22 stroke=%22%23c9a66b%22 stroke-width=%223%22/><text x=%2250%22 y=%2262%22 font-family=%22Georgia,serif%22 font-size=%2242%22 fill=%22%23c9a66b%22 text-anchor=%22middle%22>R</text></svg>">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__brand">
+    <img src="assets/images/logo-icon.png" alt="Royal Pictures">
+    <span class="nav__brand-text">ROYAL <span>PICTURES</span></span>
+  </a>
+  <ul class="nav__links">
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#pourquoi">Pourquoi nous</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav__toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav__mobile" id="navMobile">
+  <a href="#apropos">À propos</a>
+  <a href="#expertise">Expertise</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#pourquoi">Pourquoi nous</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <!-- REMPLACER PAR VRAIE PHOTO/VIDÉO DU STUDIO (image de couverture immersive) -->
+  <div class="hero__bg" id="heroBg"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <img src="assets/images/logo-full.png" alt="Royal Pictures" class="hero__mark reveal">
+    <span class="hero__eyebrow reveal reveal-delay-1">Studio de photographie &amp; production audiovisuelle — Ouagadougou</span>
+    <div class="hero__frame frame-corners frame-corners--static reveal reveal-delay-2">
+      <h1 class="hero__title">Nous ne faisons pas que des images…<br><span class="thin">nous racontons des histoires.</span></h1>
+    </div>
+    <div class="hero__cta reveal reveal-delay-3">
+      <a href="#apropos" class="btn btn--gold">
+        Découvrir
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 4v16M5 13l7 7 7-7"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero__scroll">
+    <span class="hero__scroll-line"></span>
+    <span class="hero__scroll-label">Scroll</span>
+  </div>
+</header>
+
+<!-- ============ À PROPOS ============ -->
+<section class="section about" id="apropos">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__media-wrap reveal">
+        <div class="about__media">
+          <!-- REMPLACER PAR VRAIE PHOTO DU STUDIO / ÉQUIPE EN ACTION -->
+          <img src="assets\images\Tradi_homme_dos__un_peu_NB_centralisé.jpeg" alt="Royal Pictures en tournage">
+        </div>
+      </div>
+      <div class="about__text reveal reveal-delay-1">
+        <span class="eyebrow">L'atelier</span>
+        <h2 class="section-title">Une structure créative au service de <em>l'image</em></h2>
+        <div class="rule-gold"></div>
+        <p class="lede">
+          Royal Pictures est une structure créative spécialisée dans la production audiovisuelle et la photographie professionnelle, basée à Ouagadougou. Nous accompagnons particuliers, entreprises et institutions dans la création d'images fortes, capables de capturer l'émotion, de valoriser une marque et de raconter une histoire avec impact.
+        </p>
+        <p class="about__signature">Chaque projet est une scène. Chaque image, un instant qui ne se répète jamais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWREEL ============ -->
+<section class="section showreel" id="showreel">
+  <div class="container">
+    <div class="showreel__head reveal">
+      <span class="eyebrow">En mouvement</span>
+      <h2 class="section-title">Voir <em>notre travail</em> en images</h2>
+      <p class="lede">Un aperçu de notre approche du montage vidéo — rythme, lumière et narration.</p>
+    </div>
+    <div class="showreel__frame frame-corners reveal reveal-delay-1">
+      <video
+        class="showreel__video"
+        id="showreelVideo"
+        controls
+        muted
+        playsinline
+        preload="metadata"
+        poster="assets/images/showreel-poster.jpg">
+        <source src="assets/images/IMG_1035.MP4" type="video/mp4">
+        Votre navigateur ne supporte pas la lecture vidéo.
+      </video>
+      <button class="showreel__sound-toggle" id="showreelSoundToggle" aria-label="Activer le son">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 5V4L8 9H4z"/><line x1="17" y1="9" x2="22" y2="15"/><line x1="22" y1="9" x2="17" y2="15"/></svg>
+        <span>Activer le son</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERTISE ============ -->
+<section class="section expertise" id="expertise">
+  <div class="container">
+    <div class="expertise__head reveal">
+      <span class="eyebrow">Savoir-faire</span>
+      <h2 class="section-title" style="max-width:none;">Nos domaines d'expertise</h2>
+      <p class="lede">Six univers, une même exigence : celle de l'image qui a du sens.</p>
+    </div>
+
+    <div class="expertise__grid reveal">
+
+      <div class="expertise__card">
+        <div class="expertise__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="17" cy="27" r="10.5"/><circle cx="31" cy="27" r="10.5"/>
+          </svg>
+        </div>
+        <h3>Mariages</h3>
+        <p>L'émotion d'un jour unique, capturée avec délicatesse : du premier regard à la dernière danse, en photo et en vidéo.</p>
+      </div>
+
+      <div class="expertise__card">
+        <div class="expertise__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="7" y="19" width="34" height="22" rx="1.5"/>
+            <path d="M7 19 L11 9 L41 9 L37 19 Z"/>
+            <line x1="16" y1="9" x2="20" y2="19"/>
+            <line x1="24" y1="9" x2="28" y2="19"/>
+            <line x1="32" y1="9" x2="36" y2="19"/>
+          </svg>
+        </div>
+        <h3>Clips vidéo</h3>
+        <p>Une écriture visuelle rythmée, pensée pour offrir à chaque artiste et chaque marque une signature à l'écran.</p>
+      </div>
+
+      <div class="expertise__card">
+        <div class="expertise__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 21v6a2 2 0 002 2h4l15 9V10L12 19H8a2 2 0 00-2 2z"/>
+            <path d="M27 17a9 9 0 010 14"/>
+            <path d="M33 12a16 16 0 010 24"/>
+          </svg>
+        </div>
+        <h3>Publicité</h3>
+        <p>Des contenus pensés pour convaincre et marquer les esprits, au service de votre stratégie de communication.</p>
+      </div>
+
+      <div class="expertise__card">
+        <div class="expertise__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 12h20l6 10H8z"/>
+            <line x1="24" y1="22" x2="24" y2="38"/>
+            <line x1="16" y1="38" x2="32" y2="38"/>
+            <line x1="18" y1="12" x2="12" y2="4"/>
+            <line x1="24" y1="12" x2="24" y2="3"/>
+            <line x1="30" y1="12" x2="36" y2="4"/>
+          </svg>
+        </div>
+        <h3>Shooting artistique</h3>
+        <p>Portraits, mode, projets personnels : une direction artistique sur mesure pour révéler chaque personnalité.</p>
+      </div>
+
+      <div class="expertise__card">
+        <div class="expertise__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="6" width="32" height="36" rx="1"/>
+            <circle cx="24" cy="20" r="6.5"/>
+            <path d="M13 34c1.5-6 5.5-9.5 11-9.5S33.5 28 35 34"/>
+          </svg>
+        </div>
+        <h3>Institutionnel</h3>
+        <p>Portraits professionnels et reportages d'entreprise, au service de l'image de marque d'organisations et d'institutions.</p>
+      </div>
+
+      <div class="expertise__card">
+        <div class="expertise__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="19" y="6" width="10" height="18" rx="5"/>
+            <path d="M13 21a11 11 0 0022 0"/>
+            <line x1="24" y1="32" x2="24" y2="40"/>
+            <line x1="17" y1="40" x2="31" y2="40"/>
+            <path d="M8 18c-1 3-1 6 0 8" opacity="0.6"/>
+            <path d="M40 18c1 3 1 6 0 8" opacity="0.6"/>
+          </svg>
+        </div>
+        <h3>Événementiel</h3>
+        <p>Concerts, conférences, cérémonies : nous immortalisons l'énergie et la mémoire de vos temps forts.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISION ============ -->
+<section class="vision">
+  <!-- REMPLACER PAR VRAIE PHOTO (ambiance, backstage, ou œuvre marquante) -->
+  <div class="vision__bg" id="visionBg"></div>
+  <div class="vision__overlay"></div>
+  <div class="vision__content reveal">
+    <span class="eyebrow">Notre vision</span>
+    <p class="vision__quote">Chez Royal Pictures, nous croyons que <em>chaque image doit parler.</em></p>
+    <p class="vision__sub">Notre objectif est de transformer chaque projet en une œuvre visuelle unique, où l'esthétique rencontre le message.</p>
+  </div>
+</section>
+
+<!-- ============ MISSION ============ -->
+<section class="section mission" id="mission">
+  <div class="container">
+    <div class="mission__grid">
+      <div class="mission__intro reveal">
+        <span class="eyebrow">Notre mission</span>
+        <h2 class="section-title">L'excellence, <em>projet après projet</em></h2>
+        <div class="rule-gold"></div>
+        <p class="lede">Offrir des services de qualité professionnelle accessibles, en plaçant l'exigence artistique au cœur de chaque production.</p>
+      </div>
+      <ul class="mission__values reveal reveal-delay-1">
+        <li class="mission__value">
+          <span class="mission__tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          <div><h4>Créativité</h4><p>Une vision singulière pour chaque histoire à raconter.</p></div>
+        </li>
+        <li class="mission__value">
+          <span class="mission__tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          <div><h4>Sens du détail</h4><p>Rien n'est laissé au hasard, de la lumière au cadrage.</p></div>
+        </li>
+        <li class="mission__value">
+          <span class="mission__tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          <div><h4>Excellence visuelle</h4><p>Un rendu soigné, digne des plus grandes productions.</p></div>
+        </li>
+        <li class="mission__value">
+          <span class="mission__tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          <div><h4>Satisfaction du client</h4><p>Votre vision, notre exigence : un résultat qui vous ressemble.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIE / PORTFOLIO ============ -->
+<section class="section gallery" id="portfolio">
+  <div class="container">
+    <div class="gallery__head reveal">
+      <div>
+        <span class="eyebrow">Portfolio</span>
+        <h2 class="section-title" style="max-width:none;">Une mosaïque <em>d'instants</em></h2>
+      </div>
+      <p class="lede" style="max-width: 36ch;">Un aperçu de nos productions — mariages, portraits, événements et créations artistiques.</p>
+    </div>
+
+    <!-- TOUTES LES IMAGES CI-DESSOUS SONT DES PLACEHOLDERS : REMPLACER src PAR LES VRAIES PHOTOS DU STUDIO -->
+    <div class="gallery__masonry reveal">
+
+      <div class="gallery__item frame-corners" data-full="assets/images/Sepho_et_mari.jpeg" data-cap="Mariage" data-title="Un geste de tendresse">
+        <img src="assets/images/Sepho_et_mari.jpeg" alt="Mariage — le marié embrasse la main de la mariée — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Mariage</span><p>Un geste de tendresse</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/Portrait.jpeg" data-cap="Shooting artistique" data-title="Paysage à ciel ouvert">
+        <img src="assets/images/Portrait.jpeg" alt="Paysage nature, ciel nuageux — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Shooting artistique</span><p>Paysage à ciel ouvert</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/shooting_lalay_et_amie.jpeg" data-cap="Portrait" data-title="Complicité en studio">
+        <img src="assets/images/shooting_lalay_et_amie.jpeg" alt="Portrait artistique, deux amies en studio — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Portrait</span><p>Complicité en studio</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/conf_Eldaa.jpg" data-cap="Institutionnel" data-title="Prise de parole">
+        <img src="assets/images/conf_Eldaa.jpg" alt="Conférencière s'adressant à son audience — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Institutionnel</span><p>Prise de parole</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners gallery__item--tall" data-full="assets/images/Jo_et_femme_Tradi.jpeg" data-cap="Mariage" data-title="Mariage traditionnel">
+        <img src="assets/images/Jo_et_femme_Tradi.jpeg" alt="Mariage traditionnel, couple en tenue traditionnelle — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Mariage</span><p>Mariage traditionnel</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/tsadok.jpg" data-cap="Événementiel" data-title="Le pianiste">
+        <img src="assets/images/tsadok.jpg" alt="Concert live, pianiste en scène — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Événementiel</span><p>Le pianiste</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/portrait_qlq1.jpeg" data-cap="Shooting artistique" data-title="Mise en scène sportive">
+        <img src="assets/images/portrait_qlq1.jpeg" alt="Shooting artistique en extérieur avec une raquette de tennis — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Shooting artistique</span><p>Mise en scène sportive</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners gallery__item--tall" data-full="assets/images/Arbre.jpeg" data-cap="Shooting artistique" data-title="Sous les arbres">
+        <img src="assets/images/Arbre.jpeg" alt="Shooting nature, grand arbre et arbustes verts — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Shooting artistique</span><p>Sous les arbres</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/Dedicace-68.jpg" data-cap="Événementiel" data-title="Sur scène">
+        <img src="assets/images/Dedicace-68.jpg" alt="Concert live, chanteur au micro avec danseur — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Événementiel</span><p>Sur scène</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/Prophet_Emma.jpeg" data-cap="Shooting Studio" data-title="Élégance en studio">
+        <img src="assets/images/Prophet_Emma.jpeg" alt="Portrait en studio, personne assise dans un fauteuil — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Shooting Studio</span><p>Élégance en studio</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/ensembl_ash_et_autre.jpg" data-cap="Portrait" data-title="Portrait de groupe">
+        <img src="assets/images/ensembl_ash_et_autre.jpg" alt="Portrait de groupe en noir et blanc, en extérieur — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Portrait</span><p>Portrait de groupe</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/Sepho_et_marie_DosMarie.jpeg" data-cap="Mariage" data-title="Un regard partagé">
+        <img src="assets/images/Sepho_et_marie_DosMarie.jpeg" alt="Mariage, les mariés se regardant, le marié de dos — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Mariage</span><p>Un regard partagé</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/orange_ensemble.jpg" data-cap="Événementiel" data-title="Activation de marque">
+        <img src="assets/images/orange_ensemble.jpg" alt="Photo d'ensemble lors d'un événement organisé par Orange BF — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Événementiel</span><p>Activation de marque</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/femme_tradi_un_peu_N_et_B.jpeg" data-cap="Mariage" data-title="Derrière l'éventail">
+        <img src="assets/images/femme_tradi_un_peu_N_et_B.jpeg" alt="Mariage traditionnel, shooting studio, visage caché derrière un éventail — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Mariage</span><p>Derrière l'éventail</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/batteur.jpg" data-cap="Événementiel" data-title="Le batteur">
+        <img src="assets/images/batteur.jpg" alt="Concert live, batteur ajustant ses in-ears, noir et blanc — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Événementiel</span><p>Le batteur</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/foot.jpg" data-cap="Événementiel" data-title="Pause tactique">
+        <img src="assets/images/foot.jpg" alt="Joueurs de football en pause, coach leur parlant — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Événementiel</span><p>Pause tactique</p></div>
+      </div>
+
+      <div class="gallery__item frame-corners" data-full="assets/images/Shooting_Anniv_Filles.jpeg" data-cap="Événementiel" data-title="Entre amies">
+        <img src="assets/images/Shooting_Anniv_Filles.jpeg" alt="Soirée entre amies, groupe de filles — Royal Pictures" loading="lazy">
+        <div class="gallery__caption"><span>Événementiel</span><p>Entre amies</p></div>
+      </div>
+    </div>
+</div>
+  </div>
+</section>
+
+<!-- ============ POURQUOI ROYAL PICTURES ============ -->
+<section class="section why" id="pourquoi">
+  <div class="container">
+    <div class="why__head reveal">
+      <span class="eyebrow">Pourquoi nous</span>
+      <h2 class="section-title">Pourquoi choisir <em>Royal Pictures</em></h2>
+    </div>
+    <div class="why__list reveal reveal-delay-1">
+      <div class="why__item">
+        <h3>Une approche moderne et créative</h3>
+        <p>Nous puisons dans les codes actuels de l'image pour proposer un rendu qui ne ressemble à aucun autre.</p>
+      </div>
+      <div class="why__item">
+        <h3>Une équipe passionnée et engagée</h3>
+        <p>Chaque projet est traité avec la même rigueur, du premier échange à la livraison finale.</p>
+      </div>
+      <div class="why__item">
+        <h3>Un rendu cinématographique et professionnel</h3>
+        <p>Lumière, cadrage, montage : une esthétique pensée comme au cinéma, jusque dans les moindres détails.</p>
+      </div>
+      <div class="why__item">
+        <h3>Une maîtrise des codes institutionnels et événementiels</h3>
+        <p>Nous savons nous adapter aux exigences protocolaires comme à l'énergie brute d'un évènement live.</p>
+      </div>
+      <div class="why__item">
+        <h3>Une capacité à capter les moments authentiques</h3>
+        <p>Au-delà de la technique, notre priorité reste l'émotion réelle — celle qui ne se met jamais en scène.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact__grid">
+      <div class="contact__info reveal">
+        <span class="eyebrow">Contact</span>
+        <h2 class="section-title">Racontons <em>votre histoire</em></h2>
+        <div class="rule-gold"></div>
+        <p class="lede contact__lede">Un projet en tête ? Parlons-en — nous serons heureux de vous accompagner du premier échange jusqu'à la livraison de vos images.</p>
+
+        <ul class="contact__list">
+          <li>
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 2c1 3 3 5 6 6l2-2 5 2v2c0 1-1 2-2 2C10 20 4 14 4 5z"/></svg></span>
+            <span><a href="tel:+22651183211">+226 51 18 32 11</a> &nbsp;/&nbsp; <a href="tel:+22605912504">+226 05 91 25 04</a></span>
+          </li>
+          <li>
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5.5-8 12-8 12s-8-6.5-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span>Ouagadougou, Burkina&nbsp;Faso</span>
+          </li>
+          <li>
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h13a2 2 0 012 2v10z"/></svg></span>
+            <span><a href="https://wa.me/22605912504" target="_blank" rel="noopener">Discuter sur WhatsApp</a></span>
+          </li>
+        </ul>
+
+        <div class="contact__socials">
+          <a href="https://www.facebook.com/share/1AdeARZ5Bo/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+          <a href="#" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+
+      <form class="form reveal reveal-delay-1" id="contactForm">
+        <div class="form__row">
+          <label for="fname">Nom complet</label>
+          <input type="text" id="fname" name="name" required placeholder="Votre nom">
+        </div>
+        <div class="form__row">
+          <label for="femail">Email</label>
+          <input type="email" id="femail" name="email" required placeholder="vous@exemple.com">
+        </div>
+        <div class="form__row">
+          <label for="fmsg">Message</label>
+          <textarea id="fmsg" name="message" required placeholder="Parlez-nous de votre projet…"></textarea>
+        </div>
+        <div>
+          <button type="submit" class="btn btn--gold">
+            Envoyer le message
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <p class="form__note" style="margin-top:1rem;">L'envoi ouvre votre application mail avec le message pré-rempli.</p>
+          <p class="form__status" id="formStatus"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <img src="assets/images/logo-icon.png" alt="Royal Pictures" class="footer__mark">
+    <p class="footer__signature">Royal Pictures <span>—</span> Donner vie à vos images</p>
+    <p class="footer__tagline">Studio de photographie &amp; production audiovisuelle — Ouagadougou, Burkina Faso</p>
+    <ul class="footer__nav">
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#pourquoi">Pourquoi nous</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p class="footer__copy">© <span id="year"></span> Royal Pictures. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox__prev" id="lbPrev" aria-label="Image précédente">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <img class="lightbox__img" id="lbImg" src="" alt="">
+  <button class="lightbox__next" id="lbNext" aria-label="Image suivante">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+  <button class="lightbox__close" id="lbClose" aria-label="Fermer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+</div>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
