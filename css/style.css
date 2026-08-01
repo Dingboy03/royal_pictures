@@ -768,6 +768,13 @@ p{ margin: 0; }
   margin-top: 0.3rem;
 }
 
+@media (hover: none){
+  .gallery__caption{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 900px){
   .gallery__masonry{ column-count: 2; }
 }
