@@ -1,0 +1,8 @@
+# fichiers locaux (non publiés)
+_ancien_site/
+_to_delete/
+lancer-site.bat
+serveur.ps1
+# anciennes versions JPEG, remplacées par assets/img/webp
+assets/img/full/
+assets/img/thumb/
