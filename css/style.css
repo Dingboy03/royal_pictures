@@ -599,3 +599,31 @@ body::after{ content:''; position:fixed; inset:-50%; z-index:140; pointer-events
 .footer__icon{ width:46px; }
 .footer__bottom{ border-top:0; padding-top:1.4rem; }
 .footer__top{ display:none; }
+
+
+/* =========================================================
+   V5 — corrections téléphone
+   ========================================================= */
+/* contact : libellé + valeurs alignés sur une grille */
+.contact__list li{ display:grid; grid-template-columns:7.5rem 1fr; gap:.25rem 1.2rem; align-items:baseline; }
+.contact__list .contact__lbl{ width:auto; font-stretch:80%; font-size:.82rem; color:var(--gris); }
+.contact__val{ display:flex; flex-wrap:wrap; gap:.2rem 1.4rem; }
+.contact__list a:hover{ background-size:0 1px; color:inherit; }
+@media (hover:hover){ .contact__list a:hover{ background-size:100% 1px; color:var(--or-clair); } }
+@media (max-width:560px){
+  .contact__list li{ grid-template-columns:1fr; }
+  .contact__val{ flex-direction:column; font-size:1.05rem; }
+}
+
+/* vidéo : sur téléphone, pas d'effet d'élargissement, cadre entier */
+@media (max-width:700px){
+  .showreel__frame{ clip-path:inset(0 round var(--r-md)); border-radius:var(--r-md); width:calc(100% - 2 * var(--gutter)); }
+  .showreel__video{ transform:none; }
+  .showreel__sound{ right:.8rem; bottom:.8rem; padding:.55rem .9rem; font-size:.8rem; }
+  .showreel__play{ width:72px; height:72px; margin:-36px 0 0 -36px; }
+  .showreel__play svg{ width:24px; height:24px; }
+  .reel__track{ padding-block:22px 30px; }
+  .reel__track::before, .reel__track::after{ height:7px; background:repeating-linear-gradient(90deg, transparent 0 9px, rgba(201,166,107,.28) 9px 17px); }
+}
+.contact__list .contact__val{ width:auto; font-stretch:100%; font-size:inherit; color:var(--blanc); }
+@media (max-width:560px){ .contact__list .contact__val{ font-size:1.05rem; } }
