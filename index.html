@@ -356,17 +356,25 @@
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="container">
-    <div class="footer__top">
-      <img src="assets/icons/logo-icon-gold.png" alt="" class="footer__icon" width="58" height="53">
-      <ul class="footer__nav">
-        <li><a href="#apropos">Le studio</a></li>
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#pourquoi">Pourquoi nous</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <div class="footer__card">
+      <div class="footer__lead">
+        <p class="footer__big">Donner vie à vos images</p>
+        <div class="footer__actions">
+          <a href="#contact" class="btn btn--gold magnetic"><span>Réserver une séance</span></a>
+          <a href="https://wa.me/22605912504" target="_blank" rel="noopener" class="btn btn--line magnetic"><span>WhatsApp</span></a>
+        </div>
+      </div>
+      <div class="footer__row">
+        <img src="assets/icons/logo-icon-gold.png" alt="" class="footer__icon" width="46" height="42">
+        <ul class="footer__nav">
+          <li><a href="#apropos">Le studio</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#pourquoi">Pourquoi nous</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <p class="footer__big" aria-label="Royal Pictures">Donner vie à vos images</p>
     <div class="footer__bottom">
       <p>© <span id="year"></span> Royal Pictures. Tous droits réservés.</p>
       <p>Studio de photographie &amp; production audiovisuelle, Ouagadougou</p>
@@ -386,6 +394,7 @@
   <button class="lightbox__btn lightbox__close" id="lbClose" aria-label="Fermer"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
 </div>
 
+<script src="js/vendor/lenis.min.js" defer></script>
 <script src="js/script.js" defer></script>
 </body>
 </html>

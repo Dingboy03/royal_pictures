@@ -22,6 +22,7 @@
   --ease: cubic-bezier(.22,1,.36,1);
   --ease-io: cubic-bezier(.76,0,.24,1);
   --container: 1320px;
+  --r-xs: 8px; --r-sm: 14px; --r-md: 22px; --r-lg: 32px; --r-pill: 999px;
   --gutter: clamp(1.25rem, 4vw, 3.5rem);
   --section: clamp(3.5rem, 7vw, 6.5rem);
   --nav-h: 92px;
@@ -29,6 +30,10 @@
 
 *,*::before,*::after{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; scroll-padding-top:80px; -webkit-text-size-adjust:100%; }
+html.lenis{ scroll-behavior:auto; }
+html.lenis, html.lenis body{ height:auto; }
+.lenis.lenis-stopped{ overflow:clip; }
+.lenis [data-lenis-prevent]{ overscroll-behavior:contain; }
 body{
   margin:0; background:var(--noir); color:var(--blanc);
   font-family:var(--sans); font-weight:300; font-size:clamp(15px,1.05vw,17px); line-height:1.7;
@@ -520,3 +525,77 @@ body::after{ content:''; position:fixed; inset:-50%; z-index:140; pointer-events
 @media (max-width:700px){ .hero__title{ max-width:14ch; text-wrap:balance; } }
 /* barre de navigation alignée sur la grille du contenu, même sur très grand écran */
 .nav{ padding-inline:max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter))); }
+
+
+/* =========================================================
+   V4 — arrondis, nav flottante, cartes, footer compact
+   ========================================================= */
+
+/* boutons en pilule */
+.btn, .nav__cta, .filter, .showreel__sound{ border-radius:var(--r-pill); }
+.btn::before{ border-radius:var(--r-pill); transform:translateY(101%) scale(1.2); }
+.btn:hover::before{ border-radius:var(--r-pill); transform:none; }
+.filter::before{ border-radius:var(--r-pill); }
+
+/* navigation : pleine largeur en haut, puis capsule flottante au défilement */
+.nav{ transition:transform .6s var(--ease), background .5s, padding .5s var(--ease), top .6s var(--ease), left .6s var(--ease), right .6s var(--ease), border-radius .6s var(--ease), border-color .5s; border:1px solid transparent; }
+.nav.is-scrolled{
+  top:12px; left:max(12px, calc((100% - var(--container)) / 2 + var(--gutter) / 2)); right:max(12px, calc((100% - var(--container)) / 2 + var(--gutter) / 2));
+  padding:.55rem .6rem .55rem 1.3rem; border-radius:var(--r-pill);
+  background:rgba(19,18,16,.72); border-color:rgba(201,166,107,.18); border-bottom-color:rgba(201,166,107,.18);
+  box-shadow:0 18px 50px -20px rgba(0,0,0,.7);
+}
+.nav.is-scrolled .nav__brand img{ height:34px; }
+.nav.is-hidden{ transform:translateY(calc(-100% - 24px)); }
+.nav.is-scrolled .nav__toggle{ width:40px; height:40px; }
+
+/* hero : s'arrondit et se détache quand on commence à défiler */
+.hero{ clip-path:inset(0 calc(var(--hp,0) * 1.4vw) 0 calc(var(--hp,0) * 1.4vw) round 0 0 calc(var(--hp,0) * 40px) calc(var(--hp,0) * 40px)); }
+
+/* images arrondies */
+.about__media, .about__small{ border-radius:var(--r-lg); }
+.about__small{ border-radius:var(--r-md); }
+.service__thumb{ border-radius:var(--r-sm); }
+.float-img{ border-radius:var(--r-md); box-shadow:0 30px 80px -30px rgba(0,0,0,.8); }
+.showreel__frame{ border-radius:var(--r-lg); clip-path:inset(0 calc(var(--p-inv,1) * 14%) round var(--r-lg)); }
+.reel__img{ border-radius:var(--r-md); }
+.tile{ border-radius:var(--r-md); isolation:isolate; }
+.tile::before, .tile::after{ border-radius:inherit; }
+.lightbox__img{ border-radius:var(--r-md); }
+.marquee{ border-radius:0; }
+
+/* vision : carte arrondie posée sur la page */
+.vision{ margin-inline:var(--gutter); border-radius:var(--r-lg); min-height:72vh; isolation:isolate; }
+@media (min-width:1400px){ .vision{ margin-inline:auto; max-width:calc(var(--container) + 6rem); } }
+
+/* mission : les valeurs deviennent des cartes */
+.mission{ background:transparent; }
+.values{ border-top:0; gap:clamp(.7rem,1.2vw,1rem); }
+.value, .value:nth-child(even), .value:nth-child(odd){
+  padding:clamp(1.4rem,2.2vw,2rem); border:1px solid rgba(201,166,107,.12); border-radius:var(--r-md);
+  background:linear-gradient(160deg, rgba(201,166,107,.07), rgba(255,255,255,.015) 60%); transition:transform .6s var(--ease), border-color .4s, opacity 1s var(--ease);
+}
+.value::before, .value:nth-child(even)::before{ left:clamp(1.4rem,2.2vw,2rem); top:-1px; }
+.value:hover{ transform:translateY(-4px); border-color:rgba(201,166,107,.35); }
+@media (max-width:560px){ .value:nth-child(n){ padding:1.4rem; border-right:1px solid rgba(201,166,107,.12); } }
+
+/* pourquoi : chaque raison se met en relief au survol */
+.why__item{ border-radius:var(--r-sm); padding-inline:1rem; margin-inline:-1rem; transition:opacity .8s ease, background .4s; }
+.why__item:hover{ background:rgba(201,166,107,.05); }
+
+/* contact */
+.contact{ padding-bottom:clamp(2.5rem,5vw,4rem); }
+.form{ border-radius:var(--r-lg); }
+.contact__list li:last-child{ border-bottom:0; }
+
+/* footer compact, en carte */
+.footer{ padding:0 0 1.6rem; background:transparent; }
+.footer__card{ border-radius:var(--r-lg); padding:clamp(1.8rem,4vw,3.2rem); border:1px solid rgba(201,166,107,.14);
+  background:radial-gradient(ellipse 70% 120% at 100% 0%, rgba(201,166,107,.12), transparent 60%), var(--panel); }
+.footer__lead{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:1.5rem 3rem; }
+.footer__big{ font-size:clamp(2.4rem,5.6vw,5.4rem); margin:0; white-space:normal; max-width:12ch; line-height:1; }
+.footer__actions{ display:flex; flex-wrap:wrap; gap:.8rem; }
+.footer__row{ display:flex; justify-content:space-between; align-items:center; gap:1.5rem; flex-wrap:wrap; margin-top:clamp(1.8rem,3.5vw,2.8rem); padding-top:1.4rem; border-top:1px solid rgba(201,166,107,.12); }
+.footer__icon{ width:46px; }
+.footer__bottom{ border-top:0; padding-top:1.4rem; }
+.footer__top{ display:none; }

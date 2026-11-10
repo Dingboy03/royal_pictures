@@ -12,6 +12,16 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  /* ---------- défilement fluide (Lenis, hébergé localement) ---------- */
+  var lenis = null;
+  if(!reduce && window.Lenis){
+    lenis = new window.Lenis({ lerp: 0.085, wheelMultiplier: 0.95, autoRaf: true, anchors: { offset: -80 } });
+  }
+  function lockScroll(on){
+    if(lenis){ on ? lenis.stop() : lenis.start(); }
+    document.body.style.overflow = on ? 'hidden' : '';
+  }
+
   /* ---------- split text en mots ---------- */
   $$('[data-split]').forEach(function(el){
     var i = 0;
@@ -42,10 +52,11 @@
   }
   function openIntro(){
     intro.classList.add('is-open');
-    body.classList.remove('is-loading');
+    body.classList.remove('is-loading'); if(lenis) lenis.start();
     setTimeout(startHero, 450);
     setTimeout(function(){ intro.classList.add('is-gone'); }, 2000);
   }
+  if(lenis && body.classList.contains('is-loading')) lenis.stop();
   var seen = false;
   try { seen = sessionStorage.getItem('rp-intro') === '1'; sessionStorage.setItem('rp-intro', '1'); } catch(e){}
   if(reduce){
@@ -163,7 +174,7 @@
     toggle.setAttribute('aria-expanded', open);
     toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
     menu.setAttribute('aria-hidden', !open);
-    body.style.overflow = open ? 'hidden' : '';
+    lockScroll(open);
   }
   toggle.addEventListener('click', function(){ setMenu(!menuOpen); });
   $$('a', menu).forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
@@ -188,7 +199,7 @@
     vq.innerHTML = vq.textContent.trim().split(/\s+/).map(function(w){ return '<span class="vw">' + w + '</span>'; }).join(' ');
     vWords = $$('.vw', vq);
   }
-  var vision = $('#vision');
+  var vision = $('#vision'), heroEl = $('.hero');
   var scrollTick = false;
 
   /* pellicule horizontale */
@@ -209,6 +220,7 @@
     progressBar.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')';
 
     nav.classList.toggle('is-scrolled', y > 40);
+    if(!reduce) heroEl.style.setProperty('--hp', clamp(y / (vh * 0.9), 0, 1).toFixed(3));
     if(!menuOpen) nav.classList.toggle('is-hidden', y > lastY && y > 500);
     lastY = y;
 
@@ -419,12 +431,12 @@
   }
   function openLb(t){
     list = visibleTiles(); lastFocus = t;
-    lb.classList.add('is-open'); lb.setAttribute('aria-hidden', 'false'); body.style.overflow = 'hidden';
+    lb.classList.add('is-open'); lb.setAttribute('aria-hidden', 'false'); lockScroll(true);
     showLb(list.indexOf(t));
     $('#lbClose').focus();
   }
   function closeLb(){
-    lb.classList.remove('is-open'); lb.setAttribute('aria-hidden', 'true'); body.style.overflow = '';
+    lb.classList.remove('is-open'); lb.setAttribute('aria-hidden', 'true'); lockScroll(false);
     if(lastFocus) lastFocus.focus();
   }
   tiles.forEach(function(t){ t.addEventListener('click', function(e){ e.preventDefault(); openLb(t); }); });
