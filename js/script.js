@@ -15,11 +15,14 @@
   /* ---------- split text en mots ---------- */
   $$('[data-split]').forEach(function(el){
     var i = 0;
-    var words = el.textContent.trim().split(/\s+/);
-    el.setAttribute('aria-label', el.textContent.trim());
-    el.innerHTML = words.map(function(w){
-      return '<span class="w" aria-hidden="true"><span style="--i:' + (i++) + '">' + w + '</span></span>';
-    }).join(' ');
+    el.setAttribute('aria-label', el.textContent.replace(/\s+/g, ' ').trim());
+    // les <br> éventuels sont conservés (retours à la ligne voulus sur grand écran)
+    el.innerHTML = el.innerHTML.split(/<br\s*\/?>/i).map(function(seg){
+      var tmp = document.createElement('div'); tmp.innerHTML = seg;
+      return tmp.textContent.trim().split(/\s+/).filter(Boolean).map(function(w){
+        return '<span class="w" aria-hidden="true"><span style="--i:' + (i++) + '">' + w + '</span></span>';
+      }).join(' ');
+    }).join(' <br>');
   });
 
   /* ---------- mise au point des photos (flou -> net) ---------- */
@@ -108,7 +111,7 @@
   function startSlides(){ goSlide(0); }
 
   /* ---------- reveal au scroll ---------- */
-  var revealTargets = $$('[data-split]:not(.hero [data-split]), .fade-up:not(.hero .fade-up), .img-reveal, .kicker, .value, .why__item, .footer__big');
+  var revealTargets = $$('[data-split]:not(.hero [data-split]), .fade-up:not(.hero .fade-up), .img-reveal, .kicker, .value, .why__item');
   if('IntersectionObserver' in window && !reduce){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
@@ -118,6 +121,17 @@
     revealTargets.forEach(function(el){ io.observe(el); });
   } else {
     revealTargets.forEach(function(el){ el.classList.add('is-in'); });
+  }
+
+  /* ---------- slogan du pied de page : on observe le footer (le texte masqué n'est jamais « visible ») ---------- */
+  var footer = $('.footer'), footerBig = $('.footer__big');
+  if(footer && footerBig){
+    if('IntersectionObserver' in window && !reduce){
+      var fio = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ footerBig.classList.add('is-in'); fio.disconnect(); } });
+      }, { threshold: .25 });
+      fio.observe(footer);
+    } else footerBig.classList.add('is-in');
   }
 
   /* ---------- tuiles du portfolio en cascade ---------- */
